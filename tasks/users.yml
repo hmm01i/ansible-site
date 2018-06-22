@@ -1,0 +1,7 @@
+- name: "add user | {{ item.username }}"
+  user:
+    name: "{{ item.username }}"
+    uid: 5000
+    state: present
+  with_items:
+    - { username: jacob }

@@ -1,0 +1,6 @@
+---
+- name: grafana host
+  hosts: "{{targets}}"
+  roles:
+    - { role: config_encoder_filters }
+    - { role: ansible-grafana }

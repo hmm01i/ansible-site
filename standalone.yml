@@ -1,0 +1,7 @@
+---
+- name: monitoring node
+  hosts: "{{targets}}"
+  roles:
+    - { role: config_encoder_filters }
+    - { role: ansible-elasticsearch, es_instance_name: "{{ ansible_hostname}}" }
+    - { role: ansible-grafana }

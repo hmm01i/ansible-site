@@ -1,0 +1,12 @@
+- src: https://github.com/elastic/ansible-elasticsearch.git
+  version: 50a8f3b144d6e1714db0431a36bab2a11f121f74
+
+- src: https://github.com/hmm01i/ansible-grafana.git
+  version: fixes
+
+- src: https://github.com/jtyr/ansible-config_encoder_filters.git
+  name: config_encoder_filters
+  version: dc3a089e7a2b94d38fc1d725272966ef37d57f5f
+
+- src: https://github.com/mongrelion/ansible-role-docker.git
+  version: 075ceb9b73e6751f8cd0c174978bad9bf97a2ecc

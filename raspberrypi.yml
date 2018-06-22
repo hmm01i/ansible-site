@@ -1,0 +1,7 @@
+- name: configs for my raspberry pi's
+  hosts: raspberrypi
+  become: true
+  tasks:
+    - name: echo
+      debug:
+        msg: Debug message
