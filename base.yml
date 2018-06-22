@@ -13,5 +13,6 @@
 
     - import_tasks: tasks/users.yml
 
-    - import_role:
-        name: ansible-sshd
+  # we don't necessarily whant this on laptops...
+  #    - import_role:
+  #      name: ansible-sshd
