@@ -10,3 +10,6 @@
 
 - src: https://github.com/mongrelion/ansible-role-docker.git
   version: 075ceb9b73e6751f8cd0c174978bad9bf97a2ecc
+
+- src: https://github.com/willshersystems/ansible-sshd.git
+  version: d2ba81107ade1cf53c8b93590465c21ad2bc4530

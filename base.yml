@@ -12,3 +12,6 @@
         - zsh
 
     - import_tasks: tasks/users.yml
+
+    - import_role:
+        name: ansible-sshd
