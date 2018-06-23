@@ -1,0 +1,6 @@
+- name: install docker
+  hosts: "{{ targets }}"
+  become: true
+  tasks:
+    - import_role:
+        name: ansible-role-docker

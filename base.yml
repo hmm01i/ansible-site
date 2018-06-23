@@ -11,8 +11,3 @@
       with_items:
         - zsh
 
-    - import_tasks: tasks/users.yml
-
-  # we don't necessarily whant this on laptops...
-  #    - import_role:
-  #      name: ansible-sshd

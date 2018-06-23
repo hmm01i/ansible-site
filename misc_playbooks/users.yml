@@ -1,0 +1,22 @@
+---
+- name: manage a user
+  hosts: "{{targets}}"
+  become: true
+  tasks:
+    - name: "add user | {{ username }}"
+      user:
+        name: "{{ username }}"
+      #    uid: 5000 #TODO: fix this... do we care?
+        state: present
+        password: "{{ password |password_hash('sha512') }}"
+        shell: /bin/zsh
+
+  vars_prompt:
+    - name: "username"
+      prompt: "Enter user to manage"
+
+    - name: "user_password"
+      prompt: "Enter password"
+      private: yes
+      confirm: yes
+

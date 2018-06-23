@@ -1,0 +1,6 @@
+- name: packages for workstations
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+        - yamllint
