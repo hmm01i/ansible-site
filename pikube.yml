@@ -1,5 +1,7 @@
-- name: kubernetes cluster on rpi
-  hosts: pikube
+---
+#kubernetes cluster on rpi
+- name: first apply configs to master
+  hosts: pikube-master
   become: true
   tasks:
     # need a docker role that will work with rpi
@@ -8,4 +10,20 @@
     #  tags: docker
     - import_role:
         name: ansible-k8s
+        k8s_role: master
       tags: k8s
+
+
+- name: apply configs to workers
+  hosts: pikube-workers
+  become: true
+  tasks:
+    # need a docker role that will work with rpi
+    # - import_role:
+    #     name: ansible-role-docker
+    #   tags: docker
+    - import_role:
+        name: ansible-k8s
+        k8s_role: worker
+      tags: k8s
+
