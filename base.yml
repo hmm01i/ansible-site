@@ -10,4 +10,8 @@
         state: present
       with_items:
         - zsh
-
+        - tmux
+        - git
+    - block:
+      - include_tasks: "tasks/{{ profile }}.yml"
+      when: profile is defined

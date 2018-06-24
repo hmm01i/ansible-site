@@ -1,3 +1,6 @@
 roles/
 inventory/
 inventory
+.retry
+*.swp
+*~

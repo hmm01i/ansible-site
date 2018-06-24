@@ -13,3 +13,7 @@
 
 - src: https://github.com/willshersystems/ansible-sshd.git
   version: d2ba81107ade1cf53c8b93590465c21ad2bc4530
+
+    # we don't want to pull this yet. its under development locally
+  #- src: https://github.com/hmm01i/ansible-k8s.git
+  #  version: rpi
