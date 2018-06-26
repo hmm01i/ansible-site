@@ -8,12 +8,12 @@
         name: "{{ username }}"
       #    uid: 5000 #TODO: fix this... do we care?
         state: present
-        password: "{{ password |password_hash('sha512') }}"
-        shell: /bin/zsh
+        password: "{{ user_password |password_hash('sha512') }}"
 
   vars_prompt:
     - name: "username"
       prompt: "Enter user to manage"
+      private: no
 
     - name: "user_password"
       prompt: "Enter password"

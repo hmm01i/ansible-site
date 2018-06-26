@@ -12,6 +12,15 @@
         - zsh
         - tmux
         - git
+      tags: ['packages']
+
+    - include_tasks: "tasks/users.yml"
+      tags: ['users']
+
+    - include_tasks: "tasks/sudo.yml"
+      tags: ['sudo']
+
     - block:
       - include_tasks: "tasks/{{ profile }}.yml"
+        tags: ['profile']
       when: profile is defined

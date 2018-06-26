@@ -1,0 +1,22 @@
+---
+- name: "manage root user"
+  user:
+    name: root
+    state: present
+    password: "{{ root_password_hash }}" #prehashed!!!
+  when: manage_root_user == true and ansible_os_family == "RedHat"
+
+- name: "user: {{ item.username }}"
+  user:
+    name: "{{ item.username }}"
+    state: "{{ item.state }}"
+    password: "{{ item.password_hash }}"
+  with_items:
+    "{{ users }}"
+  when: users is defined
+
+- name: Set authorized key for current user copying it from current user
+  authorized_key:
+    user: "{{ lookup('env','USER') }}"
+    state: present
+    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"

@@ -17,3 +17,6 @@
     # we don't want to pull this yet. its under development locally
   #- src: https://github.com/hmm01i/ansible-k8s.git
   #  version: rpi
+  #
+- src: https://github.com/PowerDNS/pdns-ansible.git
+  version: bfabe2adca8dcd3c848204a09cb52e36741675ee
