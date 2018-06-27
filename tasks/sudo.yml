@@ -1,0 +1,12 @@
+---
+- name: install sudo
+  package:
+    name: sudo
+    state: present
+
+- name: sudo snippet to give me privilages
+  copy:
+    dest: /etc/sudoers.d/01-jacob
+    content: jacob ALL=(ALL) ALL
+    validate: visudo -c -f %s
+    

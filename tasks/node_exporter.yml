@@ -1,0 +1,8 @@
+---
+- import_role:
+    name: ansible-prometheus
+  tags: ['prometheus']
+  vars:
+    prometheus_components:
+      - node_exporter
+    prometheus_node_exporter_version: 0.16.0

@@ -20,3 +20,6 @@
   #
 - src: https://github.com/PowerDNS/pdns-ansible.git
   version: bfabe2adca8dcd3c848204a09cb52e36741675ee
+
+- src: https://github.com/William-Yeh/ansible-prometheus.git
+  version: cdd0a594eb886de049a6971b54e792da7e252944
