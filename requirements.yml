@@ -21,5 +21,8 @@
 - src: https://github.com/PowerDNS/pdns-ansible.git
   version: bfabe2adca8dcd3c848204a09cb52e36741675ee
 
-- src: https://github.com/William-Yeh/ansible-prometheus.git
-  version: cdd0a594eb886de049a6971b54e792da7e252944
+- src: https://github.com/cloudalchemy/ansible-prometheus.git
+  version: 0a9d99e6ff8ff5052b09c977ff89a2fc8098c265
+
+- src: https://github.com/cloudalchemy/ansible-node-exporter.git
+  version: 0373b7507436f48fbc4f6a5ea3f835d01be663b9

@@ -1,0 +1,32 @@
+---
+- import_role:
+    name: ansible-prometheus
+  tags: ['prometheus']
+  vars:
+    prometheus_version: 2.3.1
+    prometheus_targets:
+      node:
+        - targets:
+          - localhost:9100
+          - apple.wland.mtrx:9100
+          - raspberry.wland.mtrx:9100
+          - blackberry.wland.mtrx:9100
+          - pve.wland.mtrx:9100
+          - powerdns.wland.mtrx:9100
+
+- import_role:
+    name: config_encoder_filters
+
+- import_role:
+    name:  ansible-grafana
+
+  #- name: systemd file for prometheus
+  #  copy:
+  #    src: prometheus.service
+  #    dest: /etc/systemd/system/prometheus.service
+  #    
+  #- name: rsyslog file for prometheus logs and systemd
+  #  copy:
+  #    src: prometheus-syslog.conf
+  #    dest: /etc/rsyslog.d/prometheus-syslog.conf
+

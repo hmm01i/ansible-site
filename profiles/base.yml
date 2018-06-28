@@ -1,0 +1,36 @@
+---
+# baseline configs
+
+- name: default packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - zsh
+    - tmux
+    - git
+    - sudo
+
+  tags: ['packages']
+
+- include_tasks: "users.yml"
+  tags: ['users']
+
+- name: sudo snippet to give me privilages
+  copy:
+    dest: /etc/sudoers.d/01-jacob
+    content: jacob ALL=(ALL) ALL
+    validate: visudo -c -f %s
+
+    
+- name: remove old node-exporter
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /opt/prometheus/node_exporter-0.16.0.linux-386
+
+- import_role:
+    name: ansible-node-exporter
+  tags: ['prometheus', 'node-exporter']
+
